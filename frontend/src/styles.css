@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+    --color-cinema-red: #e50914;
+    --color-cinema-dark: #141414;
+    --color-cinema-gray: #e5e5e5;
+    --color-cinema-black: #000000;
+    --color-cinema-light: #ffffff;
+    --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+
+    html,
+    body {
+        @apply h-full bg-cinema-dark text-white font-sans antialiased;
+    }
+}
+
+@layer components {
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .animate-fade-in-down {
+        animation: fadeInDown 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .btn-primary {
+        @apply bg-cinema-red text-white px-6 py-2 rounded-full font-bold hover:bg-[#b00710] transition transform hover:scale-105 shadow-md cursor-pointer;
+    }
+
+    .btn-outline {
+        @apply border-2 border-white text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition transform hover:scale-105 cursor-pointer;
+    }
+
+    .container-custom {
+        @apply container mx-auto px-4 max-w-7xl;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e50914;
+}
